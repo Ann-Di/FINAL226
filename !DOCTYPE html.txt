@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Zodiac Sign Quiz</title>
+</head>
+<body>
+  <h1>Zodiac Sign Personality Quiz</h1>
+
+  <form method="POST" action="/submit">
+    <label>1. Do you like the day or night more?</label><br>
+    <input type="radio" name="q1" value="day" required> Day<br>
+    <input type="radio" name="q1" value="night"> Night<br><br>
+
+    <label>2. Which element fits your personality?</label><br>
+    <select name="q2" required>
+      <option value="">--Choose one--</option>
+      <option value="fire">Fire</option>
+      <option value="earth">Earth</option>
+      <option value="water">Water</option>
+      <option value="air">Air</option>
+    </select><br><br>
+
+    <label>3. How would your friends describe you?</label><br>
+    <input type="radio" name="q3" value="leader" required> Leader<br>
+    <input type="radio" name="q3" value="kind"> Kind<br>
+    <input type="radio" name="q3" value="smart"> Smart<br>
+    <input type="radio" name="q3" value="chill"> Chill<br><br>
+
+    <button type="submit">Find My Zodiac Sign</button>
+  </form>
+</body>
+</html>
