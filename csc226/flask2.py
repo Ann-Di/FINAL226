@@ -3,7 +3,6 @@ import sqlite3
 
 app = Flask(__name__)
 
-# === Initialize database ===
 def init_db():
     conn = sqlite3.connect('zodiac.db')
     cursor = conn.cursor()
@@ -24,7 +23,6 @@ def init_db():
 
 init_db()
 
-# === Zodiac logic (can be improved later) ===
 def determine_zodiac_result(q2, q3):
     if q2 == "fire" and q3 == "leader":
         return "Aries"
@@ -52,12 +50,10 @@ def determine_zodiac_result(q2, q3):
         return "Pisces"
     return "Unknown"
 
-# === Quiz form ===
 @app.route("/")
 def quiz():
     return render_template("zodiac_quiz.html")
 
-# === Submission handling ===
 @app.route("/submit", methods=["POST"])
 def submit():
     q1 = request.form.get("q1")
@@ -85,7 +81,6 @@ def submit():
 
     return redirect(f"/{result.lower()}")
 
-# === Result pages ===
 @app.route("/aries")
 def aries(): return render_template("ariesResult.html")
 
